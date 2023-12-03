@@ -1,0 +1,328 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+#content {
+    margin-top: 90px;
+}
+
+
+/*NABBAR start*/
+
+.navbartop {
+    background-color: ghostwhite;
+    border-radius: 30px;
+    margin: 10px 10px;
+}
+
+.navbartop button {
+    border-radius: 50%;
+    border: none;
+    color: white;
+}
+
+.navbartop a {
+    color: black;
+    font-weight: 1000;
+}
+
+.navbtn1 {
+    background-color: #f56655;
+}
+
+.navbtn2 {
+    background-color: #b1c4a8;
+}
+
+
+/*NABBAR end*/
+
+
+/*Board start*/
+
+#board_cont {
+    display: flex;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+#board_cont::-webkit-scrollbar {
+    width: 0px;
+}
+
+.boardrates {
+    min-width: 70%;
+    width: 70%;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    color: black;
+}
+
+.gold {
+    background: linear-gradient(45deg, #BF953F, #FCF6BA, #AA771C);
+    border: 2px solid #AA771C;
+}
+
+.silver {
+    background: linear-gradient(45deg, #C5C4C8, #FEFDFF, #AAA9AD);
+    border: 2px solid #AAA9AD;
+}
+
+
+/*Board end*/
+
+
+/*Gallery start*/
+
+#Gallery {
+    border-radius: 8px;
+}
+
+#Gallery img {
+    height: 300px;
+}
+
+#Gallery-buttons button {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 100%;
+}
+
+
+/*
+.click_button {
+    display: none; 
+}
+*/
+
+
+/*Gallery end*/
+
+#Menu a {
+    text-decoration: none;
+    color: black;
+}
+
+#Menu i {
+    font-size: 2.5rem;
+    text-align: center;
+    color: red;
+}
+
+#Menu p {
+    text-align: center;
+    padding-top: 10px;
+}
+
+#Menu .card-body {
+    border-radius: 8px;
+    padding: 0;
+    border: none;
+    padding-top: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+#Menu .card-body:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#Bottom_navbar {
+    height: 20px;
+    background-color: ghostwhite;
+    color: black;
+    padding: 0px;
+    padding-left: 10px;
+}
+
+.offcanvas-body {
+    padding: 0px 0px;
+}
+
+#Menu_heading {
+    border-bottom: 0.1rem solid lightgray;
+    padding-top: 10px;
+    background-color: #2F86A6;
+    color: white;
+}
+
+#Customer {
+    margin-top: 20px;
+    border-bottom: 0.01rem solid lightgray;
+}
+
+#Customer img {
+    margin-bottom: 1rem;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+#Menu_options ul li a {
+    display: block;
+    padding: 15px;
+    font-size: 20px;
+    text-decoration: none;
+    border-bottom: 0.1rem solid lightgray;
+    color: #2F86A6;
+}
+
+#Menu_options ul li a:hover {
+    background-color: #2F86A6;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+#Menu_options ul li a i {
+    vertical-align: middle;
+    font-size: 35px;
+    padding-right: 20px;
+}
+
+
+/*PAGE NEW PLANS (START)**************************************************************************************************************************************/
+
+
+/*PLANS start*/
+
+.card_plans {
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.card_plans .img_cont {
+    padding: 10px;
+}
+
+.card_plans .img_cont img {
+    border-radius: 8px;
+    height: 150px;
+}
+
+.card_plans .col1 {
+    border-right: 3px dotted lightgrey;
+}
+
+.btn_join a {
+    background-color: #2F86A6;
+    color: white;
+    width: 120px;
+}
+
+
+/*PLANS end*/
+
+
+/*Plan detailed start*/
+
+.plan_detailed {
+    border-radius: 10px;
+    border: none;
+    padding: 0;
+    box-shadow: 5px 3px 10px rgb(225, 224, 224), 0px 0px 5px rgb(230, 229, 229);
+}
+
+.plan_detailed .duration_portion {
+    padding: 10px 0px;
+    color: #f56655;
+}
+
+.plan_detailed .top_portion {
+    padding: 15px 0px;
+}
+
+.plan_detailed .top_portion h6 {
+    font-weight: 600;
+}
+
+.plan_detailed .middle_portion {
+    padding: 40px 0px;
+    background-color: ghostwhite;
+}
+
+.plan_detailed .middle_portion h1 {
+    font-weight: 700;
+    font-size: 3.5rem;
+}
+
+.plan_detailed .bottom_portion .btn-join {
+    background-color: #f56655;
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.plan_join .btn-join {
+    background-color: #f56655;
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.plan_join .btn-join {
+    background-color: #f56655;
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.plan_join {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 5px 3px 10px rgb(225, 224, 224), 0px 0px 5px rgb(230, 229, 229);
+}
+
+.plan_join #joinform label {
+    font-weight: 600;
+}
+
+.plan_join #joinform label span {
+    color: red;
+}
+
+.plan_join h5 {
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+
+/*Plan detailed end*/
+
+
+/*master start*/
+
+.plan_join {
+    border-radius: 10px;
+    border: none;
+    box-shadow: 5px 3px 10px rgb(225, 224, 224), 0px 0px 5px rgb(230, 229, 229);
+}
+
+.plan_join .master_form label {
+    font-weight: 600;
+}
+
+.plan_join .master_form label span {
+    color: red;
+}
+
+.plan_join .master_form input::placeholder,
+.plan_join .master_form textarea::placeholder {
+    color: lightgray;
+}
+
+.plan_join h5 {
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+
+/* master end */

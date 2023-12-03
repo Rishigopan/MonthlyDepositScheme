@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
+
+    <title>Rate History</title>
+
+
+    <style>
+        body {
+            background-color: rgba(52, 190, 130, 0);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        #content {
+            margin-top: 80px;
+        }
+        
+        #Bottom_navbar {
+            height: 25px;
+            background-color: #2F86A6;
+            color: white;
+            padding: 2px;
+            padding-left: 10px;
+        }
+        
+        .offcanvas-body {
+            padding: 0px 0px;
+        }
+        
+        #Menu_heading {
+            border-bottom: 0.1rem solid lightgray;
+            padding-top: 10px;
+            background-color: #2F86A6;
+            color: white;
+        }
+        
+        #Customer {
+            margin-top: 20px;
+            border-bottom: 0.01rem solid lightgray;
+        }
+        
+        #Customer img {
+            margin-bottom: 1rem;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+        
+        #Menu_options ul li a {
+            display: block;
+            padding: 15px;
+            font-size: 20px;
+            text-decoration: none;
+            border-bottom: 0.1rem solid lightgray;
+            color: #2F86A6;
+        }
+        
+        #Menu_options ul li a:hover {
+            background-color: #2F86A6;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        #Menu_options ul li a i {
+            vertical-align: middle;
+            font-size: 35px;
+            padding-right: 20px;
+        }
+        
+        #Rate_table {
+            border-radius: 8px;
+            padding: 0;
+            overflow-y: scroll;
+            max-height: 500px;
+        }
+        
+        table thead {
+            background-color: #2F86A6;
+            color: white;
+        }
+        
+        #Rate_button button {
+            border: 0.2rem solid #2F86A6;
+            border-radius: 8px;
+        }
+        
+        #Rate_button button:focus {
+            background-color: #2F86A6;
+            color: white;
+        }
+        
+        #Canvas {
+            border-radius: 8px;
+            padding: 3px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!--NAVBAR-->
+        <nav class="navbar shadow-sm fixed-top" style="background-color:#2F86A6;">
+            <div class="container-fluid">
+                <button class="btn text-white shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"><i class="material-icons">menu</i></button>
+                <a class="navbar-text text-white" style="text-decoration: none;">
+                    <h4>Company Name</h4>
+                </a>
+                <button class="btn text-white shadow-none" type="submit">
+                <i class="material-icons">notifications</i>
+            </button>
+            </div>
+        </nav>
+
+
+
+        <!--SIDE MENU-->
+        <div class="offcanvas offcanvas-start" style="width: 75%;" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-body">
+
+                <div class="text-center" id="Menu_heading">
+                    <h5>COMPANY NAME</h5>
+                </div>
+
+                <div id="Customer" class="text-center">
+                    <img src="Images/Customer.png" alt="">
+                    <h4>Customer Name</h4>
+                </div>
+
+                <div id="Menu_options">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="./Dashboard.php">
+                                <i class="material-icons">home</i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">info</i>
+                                <span>About Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">local_offer</i>
+                                <span>Offers</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">category</i>
+                                <span>Categories</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">settings</i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">storefront</i>
+                                <span>Our Stores</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">support_agent</i>
+                                <span>Contact Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">logout</i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!--CONTENTS-->
+        <div id="content" class="container-fluid">
+
+            <form action="">
+
+                <div id="Rate_button" class="row">
+                    <div class="col-6">
+                        <button class="btn shadow-none w-100">Gold</button>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn shadow-none w-100">Silver</button>
+                    </div>
+                </div>
+
+
+                <!--Date Select-->
+                <div class="row mt-3">
+                    <div class="col-6">
+                        <label for="" class="">From Date:</label>
+                        <input type="datetime-local" class="form-control">
+                    </div>
+                    <div class="col-6">
+                        <label for="" class="">To Date:</label>
+                        <input type="datetime-local" class="form-control">
+                    </div>
+                </div>
+
+            </form>
+
+
+            <!-- RATE CHART -->
+            <div id="Canvas" class="card card-body shadow mt-3">
+                <div id="ratechart" style="width:100%;height:300px;"></div>
+            </div>
+
+            <!--RATE TABLE-->
+            <div id="Rate_table" class="card card-body mt-3 mb-5 shadow">
+                <table class="table table-striped table-borderless">
+                    <thead class="text-center">
+                        <tr>
+                            <th> No.</th>
+                            <th>Date</th>
+                            <th>Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr>
+                            <td>1</td>
+                            <td>17-12-2021</td>
+                            <td>5500</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>18-12-2021</td>
+                            <td>5400</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>19-12-2021</td>
+                            <td>5600</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>20-12-2021</td>
+                            <td>5000</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>21-12-2021</td>
+                            <td>4800</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>23-12-2021</td>
+                            <td>4300</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+        <!--Footer Bar-->
+        <nav id="Bottom_navbar" class="navbar fixed-bottom ">
+            <p>
+                <i class="material-icons" style="vertical-align: middle; font-size: 0.9rem;">copyright</i>
+                <span>Company Name</span>
+            </p>
+        </nav>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        // Initialize the echarts instance based on the prepared dom
+        var myChart = echarts.init(document.getElementById('ratechart'));
+
+        window.onresize = function() {
+            myChart.resize();
+        };
+        // Specify the configuration items and data for the chart
+        var option = {
+            title: {
+                text: ''
+            },
+            tooltip: {},
+            legend: {
+                data: ['']
+            },
+            xAxis: {
+                data: ['17/12', '18/12', '19/12', '20/12', '21/12', '22/12']
+            },
+            yAxis: {},
+            series: [{
+                name: 'Rate',
+                type: 'line',
+                data: [3000, 4000, 3600, 4000, 4500, 4520]
+            }]
+        };
+
+        // Display the chart using the configuration items and data just specified.
+        myChart.setOption(option);
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

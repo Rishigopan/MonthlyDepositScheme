@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>Dashboard</title>
+
+
+    <style>
+        body {
+            background-color: rgba(52, 190, 130, 0);
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        #content {
+            margin-top: 80px;
+        }
+        
+        #Bottom_navbar {
+            height: 25px;
+            background-color: #2F86A6;
+            color: white;
+            padding: 2px;
+            padding-left: 10px;
+        }
+        
+        .offcanvas-body {
+            padding: 0px 0px;
+        }
+        
+        #Menu_heading {
+            border-bottom: 0.1rem solid lightgray;
+            padding-top: 10px;
+            background-color: #2F86A6;
+            color: white;
+        }
+        
+        #Customer {
+            margin-top: 20px;
+            border-bottom: 0.01rem solid lightgray;
+        }
+        
+        #Customer img {
+            margin-bottom: 1rem;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+        }
+        
+        #Menu_options ul li a {
+            display: block;
+            padding: 15px;
+            font-size: 20px;
+            text-decoration: none;
+            border-bottom: 0.1rem solid lightgray;
+            color: #2F86A6;
+        }
+        
+        #Menu_options ul li a:hover {
+            background-color: #2F86A6;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        #Menu_options ul li a i {
+            vertical-align: middle;
+            font-size: 35px;
+            padding-right: 20px;
+        }
+        
+        #Transaction_list li:nth-of-type(odd) {
+            padding: 5px 0px;
+            padding-left: 10px;
+            background-color: rgba(47, 134, 166, 0.3);
+        }
+        
+        #Transaction_list li:nth-of-type(even) {
+            padding: 10px 0px;
+            padding-left: 10px;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <!--NAVBAR-->
+        <nav class="navbar shadow-sm fixed-top" style="background-color:#2F86A6;">
+            <div class="container-fluid">
+                <button class="btn text-white shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"><i class="material-icons">menu</i></button>
+                <a class="navbar-text text-white" style="text-decoration: none;">
+                    <h4>Company Name</h4>
+                </a>
+                <button class="btn text-white shadow-none" type="submit">
+                <i class="material-icons">notifications</i>
+            </button>
+            </div>
+        </nav>
+
+
+
+        <!--SIDE MENU-->
+        <div class="offcanvas offcanvas-start" style="width: 75%;" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-body">
+
+                <div class="text-center" id="Menu_heading">
+                    <h5>COMPANY NAME</h5>
+                </div>
+
+                <div id="Customer" class="text-center">
+                    <img src="Images/Customer.png" alt="">
+                    <h4>Customer Name</h4>
+                </div>
+
+                <div id="Menu_options">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">home</i>
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">info</i>
+                                <span>About Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">local_offer</i>
+                                <span>Offers</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">category</i>
+                                <span>Categories</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">settings</i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">storefront</i>
+                                <span>Our Stores</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">support_agent</i>
+                                <span>Contact Us</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="material-icons">logout</i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!--CONTENTS-->
+        <div id="content" class="">
+
+
+
+            <div>
+                <ul id="Transaction_list" class="list-unstyled">
+                    <li>
+                        22 November 2022
+                    </li>
+                    <li class="row g-0">
+                        <div class="col-9">
+                            <h4>SCHEME NAME</h4>
+                        </div>
+                        <div class="col-auto">
+                            hello
+                        </div>
+
+                    </li>
+                    <li>
+                        22 November 2022
+                    </li>
+                    <li>
+                        <h4>SCHEME NAME</h4>
+
+                    </li>
+                </ul>
+            </div>
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+        <!--Footer Bar-->
+        <nav id="Bottom_navbar" class="navbar fixed-bottom ">
+            <p>
+                <i class="material-icons" style="vertical-align: middle; font-size: 0.9rem;">copyright</i>
+                <span>Company Name</span>
+            </p>
+        </nav>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
